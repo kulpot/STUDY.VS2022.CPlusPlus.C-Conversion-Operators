@@ -2,6 +2,55 @@
 using std::cout;	// cout: is an output stream, sending data out the console
 using std::endl;
 
+// ------------------------ C++ Conversion Operators ------------------------------------------------------
+//ref link:https://www.youtube.com/watch?v=UZIaRlrSWcY&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=5
+
+struct Fraction
+{
+	int numeraator;
+	int denominator;
+};
+
+void main()
+{
+	Fraction fract;
+	fract.numeraator = 3;
+	fract.denominator = 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------ C++ OverloadingOperatorsUsingMemberFunctions --------------------------------
 //ref link:https://www.youtube.com/watch?v=uwgF7mJUXkY&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=5
 
@@ -10,61 +59,61 @@ using std::endl;
 // << is called stream insertion operator
 // cout: is an output stream, sending data out the console
 
-class Vector		// class is defualt to private
-	//struct Vector		// algebra/trigonometry knowledge required	// ideally this must be .h file or .cpp file
-{
-	//public:	//solution for making class public inside a scope of a class ex. its datamembers
-	int x;			// Notice:float is default type for vector
-	int y;
-public:			// constructor public 
-	Vector(int x = 0, int y = 0) : x(x), y(y) {}
-	//friend Vector operator+(const Vector& left, const Vector& right);	// operator+ is not a member func
-	friend std::ostream& operator<<(std::ostream& stream, const Vector& right);
-	//void whatever()	// this func(which is a member func) get to access the private members of class Vector
-	//{
-	//	x = 23423;		
-	//}
-
-	Vector operator+(const Vector& right)	//operator+ member function requires "this" in left operand
-	{
-		Vector ret;
-		//ret.x = left.x + right.x;
-		//ret.y = left.y + right.y;
-		//ret.x = this->x + right.x;		// left operand becomes this-> operand
-		//ret.y = this->y + right.y;
-		ret.x = x + right.x;		// Redundancy:this-> operand removed still works because of "Vector operator+(const Vector& right)" is already a member func
-		ret.y = y + right.y;
-		return ret;
-	}
-};
-
-void main()
-{
-	Vector first(1, 2), second(3, 4);
-	Vector result = first + second;
-	cout << first << " + " << second << " = " << result << endl;
-}
-
-
-
-
-
-
-
-
-//Vector operator+(const Vector& left, const Vector& right)	//function header
+//class Vector		// class is defualt to private
+//	//struct Vector		// algebra/trigonometry knowledge required	// ideally this must be .h file or .cpp file
 //{
-//	Vector ret;
-//	ret.x = left.x + right.x;
-//	ret.y = left.y + right.y;
-//	return ret;
+//	//public:	//solution for making class public inside a scope of a class ex. its datamembers
+//	int x;			// Notice:float is default type for vector
+//	int y;
+//public:			// constructor public 
+//	Vector(int x = 0, int y = 0) : x(x), y(y) {}
+//	//friend Vector operator+(const Vector& left, const Vector& right);	// operator+ is not a member func
+//	friend std::ostream& operator<<(std::ostream& stream, const Vector& right);
+//	//void whatever()	// this func(which is a member func) get to access the private members of class Vector
+//	//{
+//	//	x = 23423;		
+//	//}
+//
+//	Vector operator+(const Vector& right)	//operator+ member function requires "this" in left operand
+//	{
+//		Vector ret;
+//		//ret.x = left.x + right.x;
+//		//ret.y = left.y + right.y;
+//		//ret.x = this->x + right.x;		// left operand becomes this-> operand
+//		//ret.y = this->y + right.y;
+//		ret.x = x + right.x;		// Redundancy:this-> operand removed still works because of "Vector operator+(const Vector& right)" is already a member func
+//		ret.y = y + right.y;
+//		return ret;
+//	}
+//};
+//
+//void main()
+//{
+//	Vector first(1, 2), second(3, 4);
+//	Vector result = first + second;
+//	cout << first << " + " << second << " = " << result << endl;
 //}
-
-std::ostream& operator<<(std::ostream& stream, const Vector& right)	//function header or leftshift function
-{
-	cout << "{" << right.x << ", " << right.y << "}";
-	return stream;
-}
+//
+//
+//
+//
+//
+//
+//
+//
+////Vector operator+(const Vector& left, const Vector& right)	//function header
+////{
+////	Vector ret;
+////	ret.x = left.x + right.x;
+////	ret.y = left.y + right.y;
+////	return ret;
+////}
+//
+//std::ostream& operator<<(std::ostream& stream, const Vector& right)	//function header or leftshift function
+//{
+//	cout << "{" << right.x << ", " << right.y << "}";
+//	return stream;
+//}
 
 
 
