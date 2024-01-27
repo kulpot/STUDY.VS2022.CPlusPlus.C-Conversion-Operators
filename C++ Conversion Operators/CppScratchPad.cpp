@@ -7,11 +7,21 @@ using std::endl;
 
 // operators: member function/nonmember function
 // operators are simply functions
+//"Conversion operators are useful for converting a user defined data type to a built -in type. Here we are converting a Fraction(user defined) to a float (built-in)"
 
 struct Fraction
 {
 	int numeraator;
 	int denominator;
+	//######Convert Float Value to Fraction###############START
+	Fraction() {}
+	Fraction(float value) { cout << "Fraction(float)" << endl; } // Scope of enclosing class defined for the value to COME IN
+	//######Convert Float Value to Fraction###############END
+
+	//######Convert Fraction to Float Value###############START
+	inline operator float() const { return numeraator * 1.0f / denominator;	// Scope of enclosing class defined for the value to COME OUT
+	//######Convert Fraction to Float Value###############END
+	}
 };
 
 void main()
@@ -19,11 +29,16 @@ void main()
 	Fraction fract;
 	fract.numeraator = 3;
 	fract.denominator = 4;
+
 	//######Convert Fraction to Float Value###############
-	float valueInt = fract.numeraator / fract.denominator;  //int result: == 0
-	float valueFloat = fract.numeraator * 1.0f / fract.denominator;	//float result: == 0.75.
-	cout << valueInt << endl;
-	cout << valueFloat << endl;
+	//float valueInt = fract.numeraator / fract.denominator;  //int result: == 0
+	//float valueFloat = fract.numeraator * 1.0f / fract.denominator;	//float result: == 0.75. //notice: this code line is prone to error, solution: create a function for this
+	float valueFloat2 = fract;
+	//cout << valueInt << endl;
+	//cout << valueFloat << endl;
+	//Fraction fract2(valueFloat2);		//######Convert Float Value to Fraction###############
+	Fraction fract2 = valueFloat2;		//######Convert Float Value to Fraction###############
+	cout << valueFloat2 << endl;
 }
 
 
