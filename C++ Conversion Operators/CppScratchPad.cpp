@@ -6,6 +6,7 @@ using std::endl;
 //ref link:https://www.youtube.com/watch?v=UZIaRlrSWcY&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=5
 
 // operators: member function/nonmember function
+// operators are simply functions
 
 struct Fraction
 {
@@ -19,9 +20,10 @@ void main()
 	fract.numeraator = 3;
 	fract.denominator = 4;
 	//######Convert Fraction to Float Value###############
-	float value = fract.numeraator / fract.denominator;  //int result: == 0
-	float value = fract.numeraator * 1.0f / fract.denominator;	//float result: == 0.75.
-	cout << value << endl;
+	float valueInt = fract.numeraator / fract.denominator;  //int result: == 0
+	float valueFloat = fract.numeraator * 1.0f / fract.denominator;	//float result: == 0.75.
+	cout << valueInt << endl;
+	cout << valueFloat << endl;
 }
 
 
