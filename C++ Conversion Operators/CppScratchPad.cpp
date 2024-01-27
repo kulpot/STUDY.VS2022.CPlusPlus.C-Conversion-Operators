@@ -5,6 +5,8 @@ using std::endl;
 // ------------------------ C++ Conversion Operators ------------------------------------------------------
 //ref link:https://www.youtube.com/watch?v=UZIaRlrSWcY&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=5
 
+// operators: member function/nonmember function
+
 struct Fraction
 {
 	int numeraator;
