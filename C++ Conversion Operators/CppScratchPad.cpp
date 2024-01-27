@@ -19,7 +19,9 @@ void main()
 	fract.numeraator = 3;
 	fract.denominator = 4;
 	//######Convert Fraction to Float Value###############
-	float value = fract.numeraator / fract.denominator;  //float total: == 0.75
+	float value = fract.numeraator / fract.denominator;  //int result: == 0
+	float value = fract.numeraator * 1.0f / fract.denominator;	//float result: == 0.75.
+	cout << value << endl;
 }
 
 
