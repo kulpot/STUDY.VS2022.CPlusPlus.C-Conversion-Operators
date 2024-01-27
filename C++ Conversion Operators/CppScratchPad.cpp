@@ -18,6 +18,8 @@ void main()
 	Fraction fract;
 	fract.numeraator = 3;
 	fract.denominator = 4;
+	//######Convert Fraction to Float Value###############
+	float value = fract.numeraator / fract.denominator;  //float total: == 0.75
 }
 
 
